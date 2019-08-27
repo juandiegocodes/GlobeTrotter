@@ -1,0 +1,378 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: \201C \201D \2018 \2019;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button, input {
+  line-height: normal;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled], input[disabled] {
+  cursor: default;
+}
+
+input[type=checkbox], input[type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body, figure {
+  margin: 0;
+}
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.visuallyHidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0);
+  overflow: hidden;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.Livvic {
+  font-family: 'Livvic', sans-serif;
+}
+
+header {
+  background: #1B2B2f;
+  height: 75vh;
+  color: #ED553b;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Baloo Bhaina', cursive;
+  margin: 0;
+  position: relative;
+  z-index: 90;
+}
+
+.earth {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: #3380B5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 2;
+  -webkit-box-shadow: inset -30px 0 rgba(0, 0, 0, 0.2), 0 0 0 120px rgba(20, 106, 221, 0.1), 0 0 0 300px rgba(20, 106, 221, 0.1), 0 0 0 500px rgba(20, 106, 221, 0.1);
+          box-shadow: inset -30px 0 rgba(0, 0, 0, 0.2), 0 0 0 120px rgba(20, 106, 221, 0.1), 0 0 0 300px rgba(20, 106, 221, 0.1), 0 0 0 500px rgba(20, 106, 221, 0.1);
+}
+
+/* Land */
+.earth:before {
+  content: "";
+  position: absolute;
+  background: #85C567;
+  height: 30px;
+  width: 75px;
+  left: 0;
+  top: 50px;
+  display: block;
+  border-radius: 40px;
+  -webkit-animation: rotateElement linear 25s infinite;
+          animation: rotateElement linear 25s infinite;
+  -webkit-box-shadow: 0px 75px 0 -5px #85C567, 5px 35px 0 -3px #85C567, 35px 125px 0 -9px #85C567, 120px -15px 0 -7px #85C567, 135px -55px 0 -9px #85C567, 150px 25px 0 7px #85C567, 220px 70px 0 -2px #85C567, 235px -35px 0 -3px #85C567, 280px 85px 0 3px #85C567, 320px 30px 0 1px #85C567, 400px 0 0 0 #85C567, 400px 75px 0 -5px #85C567, 405px 35px 0 -3px #85C567, 435px 125px 0 -9px #85C567, 520px -15px 0 -7px #85C567, 535px -55px 0 -9px #85C567, 550px 25px 0 7px #85C567, 620px 70px 0 -2px #85C567, 635px -35px 0 -3px #85C567, 680px 85px 0 3px #85C567, 720px 30px 0 1px #85C567;
+          box-shadow: 0px 75px 0 -5px #85C567, 5px 35px 0 -3px #85C567, 35px 125px 0 -9px #85C567, 120px -15px 0 -7px #85C567, 135px -55px 0 -9px #85C567, 150px 25px 0 7px #85C567, 220px 70px 0 -2px #85C567, 235px -35px 0 -3px #85C567, 280px 85px 0 3px #85C567, 320px 30px 0 1px #85C567, 400px 0 0 0 #85C567, 400px 75px 0 -5px #85C567, 405px 35px 0 -3px #85C567, 435px 125px 0 -9px #85C567, 520px -15px 0 -7px #85C567, 535px -55px 0 -9px #85C567, 550px 25px 0 7px #85C567, 620px 70px 0 -2px #85C567, 635px -35px 0 -3px #85C567, 680px 85px 0 3px #85C567, 720px 30px 0 1px #85C567;
+}
+
+/* Clouds */
+.earth:after {
+  content: "";
+  position: absolute;
+  background: white;
+  height: 20px;
+  width: 60px;
+  left: 0px;
+  top: 50px;
+  display: block;
+  border-radius: 40px;
+  -webkit-animation: rotateElement linear 15s infinite;
+          animation: rotateElement linear 15s infinite;
+  -webkit-box-shadow: 10px 50px 0 3px white, 50px -15px 0 2px white, 70px 70px 0 -1px white, 100px 25px 0 1px white, 110px 105px 0 -4px white, 140px 75px 0 -3px white, 250px -25px 0 -1px white, 210px 50px 0 1px white, 340px 130px 0 1px white, 400px 0px 0 0 white, 410px 50px 0 3px white, 500px 25px 0 1px white, 450px -15px 0 2px white, 470px 70px 0 -1px white, 540px 75px 0 -3px white, 510px 105px 0 -4px white, 650px -25px 0 -1px white, 610px 50px 0 1px white, 740px 130px 0 1px white;
+          box-shadow: 10px 50px 0 3px white, 50px -15px 0 2px white, 70px 70px 0 -1px white, 100px 25px 0 1px white, 110px 105px 0 -4px white, 140px 75px 0 -3px white, 250px -25px 0 -1px white, 210px 50px 0 1px white, 340px 130px 0 1px white, 400px 0px 0 0 white, 410px 50px 0 3px white, 500px 25px 0 1px white, 450px -15px 0 2px white, 470px 70px 0 -1px white, 540px 75px 0 -3px white, 510px 105px 0 -4px white, 650px -25px 0 -1px white, 610px 50px 0 1px white, 740px 130px 0 1px white;
+}
+
+.earth--shadow {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  background-color: transparent;
+  z-index: 4;
+  -webkit-box-shadow: inset -30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: inset -30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.moon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: auto;
+  z-index: 10;
+  -webkit-animation: moonOrbit ease-in-out 15s infinite;
+          animation: moonOrbit ease-in-out 15s infinite;
+}
+
+.moon:after {
+  content: '';
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+.stars {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: auto;
+  z-index: 1;
+  -webkit-box-shadow: 510px -450px 0 1px white,  490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white,  -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white,  -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white,  390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white,  -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white,  -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
+          box-shadow: 510px -450px 0 1px white,  490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white,  -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white,  -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white,  390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white,  -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white,  -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
+}
+
+.inspiration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 10px;
+}
+
+.inspiration a {
+  color: white;
+}
+
+@-webkit-keyframes rotateElement {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-400px, 0);
+            transform: translate(-400px, 0);
+  }
+}
+
+@keyframes rotateElement {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-400px, 0);
+            transform: translate(-400px, 0);
+  }
+}
+
+@-webkit-keyframes moonOrbit {
+  0% {
+    -webkit-transform: translate(-160px, 0);
+            transform: translate(-160px, 0);
+    z-index: 10;
+  }
+  20% {
+    z-index: -1;
+  }
+  50% {
+    -webkit-transform: translate(105px, 0);
+            transform: translate(105px, 0);
+  }
+  100% {
+    -webkit-transform: translate(-160px, 0);
+            transform: translate(-160px, 0);
+  }
+}
+
+@keyframes moonOrbit {
+  0% {
+    -webkit-transform: translate(-160px, 0);
+            transform: translate(-160px, 0);
+    z-index: 10;
+  }
+  20% {
+    z-index: -1;
+  }
+  50% {
+    -webkit-transform: translate(105px, 0);
+            transform: translate(105px, 0);
+  }
+  100% {
+    -webkit-transform: translate(-160px, 0);
+            transform: translate(-160px, 0);
+  }
+}

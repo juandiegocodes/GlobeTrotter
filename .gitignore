@@ -1,5 +1,12 @@
 *.code-workspace
 project-4-scope.txt
+color-reference.png
+.vscode/
+-----------
+Resources
+https://codepen.io/orrybaram/pen/NqvVeX
+
+
 -----------
 Timeline:
 27: html wireframe, make the api call, and push elements to dom
