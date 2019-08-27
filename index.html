@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Wanderlust</p>
+    <h2>description</h2>
+    <p>App to find your next travel destination, and display useful information of that country</p>
+    
+    <h2>MVP</h2>
+    <p>make call to api (https://restcountries.eu/rest/v2/all)</p>
+    <p>display information from a random country</p>
+    
+    <h2>Pseudocode - MVP</h2>
+    <p>on page load, making a call in the back - returns an array</p>
+    <p>wait for the user to click on a button</p>
+    <p>each button click runs the following function</p>
+    <ul>
+        <li>randomize which of the 3 arrays</li>
+        <li>randomize the object of the array 0-99</li>
+        <li>from there, we want to get: capital, flag, name, languages object, subregion, currency or any other info</li>
+        <li>display this to dom</li>
+    </ul>
+
+
+    <h2>Stretch goals</h2>
+    <p>weather api - look up weather for capital of that country</p>
+    <p>unsplashit api - look for pictures of the country for attractions</p>
+
+    deadlines
+    27: html wireframe, make the api call, and push elements to dom
+    randomize function and attach it to the button click - testing
+    28: color palette, more css, JS: filtering errors
+    29: MVP deadline
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="test.js"></script>
+</body>
+</html>
