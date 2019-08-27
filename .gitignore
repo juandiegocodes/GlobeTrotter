@@ -1,2 +1,31 @@
 *.code-workspace
 project-4-scope.txt
+-----------
+Timeline:
+27: html wireframe, make the api call, and push elements to dom
+    randomize function and attach it to the button click - testing
+28: color palette, more css, JS: filtering errors
+29: MVP deadline
+-----------
+Scope Outline
+
+Description:
+App to find your next travel destination, and display useful information of that country
+
+MVP:
+Make call to api (https://restcountries.eu/rest/v2/all)
+Display information from a random country
+
+MVP Pseudocode:
+1. On page load, make an api call in the back - returns an array
+2. Wait for the user to click on a button
+3. Each button click runs the following function
+- randomize which of the 3 arrays
+- randomize the object of the array 0-99
+- from there, we want to get: capital, flag, name, languages object, subregion, currency or any other info
+- display this to dom
+
+Stretch goals:
+Unsplashit api - look for pictures of the country's attractions, display that in gallery area (max 6 photos)
+Weather api - look up weather of capital city of that country
+---------
