@@ -1,8 +1,12 @@
 header {
   background: #1B2B2f;
-  height: 75vh;
+  height: 100vh;
   color: $orange;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 h1{
@@ -11,6 +15,15 @@ h1{
   position: relative;
   z-index: 90;
 }
+
+.button {
+  width: 200px;
+  height: 100px;
+  background: $orange;
+  z-index: 900;
+  border-radius: 50px;
+}
+
 .earth {
   height: 200px;
   width: 200px;

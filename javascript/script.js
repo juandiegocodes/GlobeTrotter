@@ -1,30 +1,39 @@
 const travelApp = {};
 travelApp.baseUrl = `https://restcountries.eu/rest/v2/all`;
 
-travelApp.popFilteredArray = [];
 travelApp.getCountries = function() {
     $.ajax({
         url: travelApp.baseUrl,
         method: 'GET',
         datatype: 'json',
     }).then(function(result) {
-        for(let i = 1; i <= 249; i++) {
-            if (result[i].population > 15000000 && result[i].flag != "") {
-              travelApp.popFilteredArray.push(result[i])
-            }
-          }
-          console.log(travelApp.popFilteredArray)
-        // name, capital, flag, languages, currencies,Demonim,region, lating(strechgoal), timezone(optional)
-        // console.log(result);
-        // console.log(result[0].name);
-        // console.log(result[0].capital);
-        // console.log(result[0].flag);
-        // console.log(result[0].languages);
-        // console.log(result[0].currencies);
+        travelApp.filter(result);
     }) 
 }
 
+//filter the raw data based on population, and if the returned data has all the assets
+// name, capital, flag, languages, currencies,Demonim,region, lating(strechgoal), timezone(optional)
+travelApp.filteredArray = [];
+travelApp.filter = function(rawData) {
+    for(let i = 0; i <= 249; i++) {
+        if (rawData[i].population > 15000000 && rawData[i].flag != "") {
+            travelApp.filteredArray.push(rawData[i])
+        }
+    }
+    console.log(travelApp.filteredArray)
+    console.log(travelApp.filteredArray.length)
+    travelApp.country= travelApp.filteredArray[travelApp.randomIndex()];
+    console.log(travelApp.country)
+    
+}
 
+//click function
+// 
+
+//randomize function
+travelApp.randomIndex = function() {
+    return (Math.floor(Math.random() * travelApp.filteredArray.length));
+}
 //capital, flag, name, languages object, currency
 travelApp.init = function () {
     travelApp.getCountries();
