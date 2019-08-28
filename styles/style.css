@@ -184,6 +184,10 @@ body {
   font-family: 'Livvic', sans-serif;
 }
 
+p {
+  margin: 0;
+}
+
 header {
   background: #1B2B2f;
   height: 100vh;
@@ -208,14 +212,36 @@ h1 {
   margin: 0;
   position: relative;
   z-index: 90;
+  font-size: 6rem;
 }
 
 .button {
-  width: 200px;
-  height: 100px;
-  background: #ED553b;
   z-index: 900;
   border-radius: 50px;
+  -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
+          box-shadow: 3px 4px 0px 0px #8a2a21;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #ED553b), to(#f24437));
+  background: linear-gradient(to bottom, #ED553b 5%, #f24437 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$orange', endColorstr='#f24437',GradientType=0);
+  background-color: #ED553b;
+  border: 1px solid #d02718;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 20px;
+  text-shadow: 0px 1px 0px #810e05;
+}
+
+.button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #f24437), to(#ED553b));
+  background: linear-gradient(to bottom, #f24437 5%, #ED553b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='$orange',GradientType=0);
+  background-color: #f24437;
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
 }
 
 .earth {
@@ -318,8 +344,8 @@ h1 {
           transform: translate(-50%, -50%);
   overflow: auto;
   z-index: 1;
-  -webkit-box-shadow: 510px -450px 0 1px white,  490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white,  -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white,  -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white,  390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white,  -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white,  -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
-          box-shadow: 510px -450px 0 1px white,  490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white,  -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white,  -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white,  390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white,  -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white,  -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
+  -webkit-box-shadow: 510px -450px 0 1px white,  490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white,  -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white,  -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white,  390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white,  -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white,  -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
+          box-shadow: 510px -450px 0 1px white,  490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white,  -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white,  -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white,  390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white,  -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white,  -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
 }
 
 .inspiration {
@@ -392,4 +418,64 @@ h1 {
     -webkit-transform: translate(-160px, 0);
             transform: translate(-160px, 0);
   }
+}
+
+.flag-area {
+  background-color: #F6D55C;
+  position: relative;
+  z-index: 999999999999;
+}
+
+.useful-info {
+  background-color: #3CAEA3;
+}
+
+.wrapper {
+  padding: 50px;
+  width: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.wrapper h2 {
+  font-family: 'Baloo Bhaina', cursive;
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.wrapper figure {
+  width: 70%;
+}
+
+.wrapper figure img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wrapper .country-name {
+  font-size: 4rem;
+}
+
+.wrapper h3 {
+  font-size: 3rem;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
