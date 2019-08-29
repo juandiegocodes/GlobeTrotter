@@ -6,6 +6,10 @@ color-reference.png
 Resources
 https://codepen.io/orrybaram/pen/NqvVeX
 
+-----------
+Pixelbay
+key:13460553-36edb17dd643bfc7f36cf9eab
+docS: https://pixabay.com/api/docs/
 
 -----------
 Timeline:
@@ -33,6 +37,6 @@ MVP Pseudocode:
 - display this to dom
 
 Stretch goals:
-Unsplashit api - look for pictures of the country's attractions, display that in gallery area (max 6 photos)
+Unsplash api - look for pictures of the country's attractions, display that in gallery area (max 6 photos)
 Weather api - look up weather of capital city of that country
 ---------

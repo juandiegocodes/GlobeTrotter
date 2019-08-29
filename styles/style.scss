@@ -45,5 +45,23 @@
 }
 
 .container {
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    .row {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .row-content{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+}
+.longitude, .latitude {
+    display: none;
+}
+.map {
+    height: 400px;
+    width: 100%;
 }

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shan Diego</title>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Livvic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -36,23 +37,36 @@
             <div class="wrapper">
                 <h2>About this Country:</h2>
                 <div class="container">
-                    <div class="left">
-                        <h3>Capital Name</h3>
-                        <p class="capital-name"></p>
-                        <h3>Sub-Region</h3>
-                        <p class="sub-region"></p>
+                    <div class="row">
+                        <div class="row-content">
+                            <h3>Capital Name</h3>
+                            <p class="capital-name"></p>
+                        </div>
+                        <div class="row-content">
+                            <h3>Population</h3>
+                            <p class="population"></p>
+                            <p class="latitude"></p>
+                        </div>
                     </div>
-                    <div class="right">
-                        <h3>Population</h3>
-                        <p class="population"></p>
-                        <h3> Languages</h3>
-                        <p class="languages"></p>
+                    <div class="row">
+                        <div class="row-content">
+                            <h3>Sub-Region</h3>
+                            <p class="sub-region"></p>
+                        </div>
+                        <div class="row-content">
+                            <h3> Languages</h3>
+                            <p class="languages"></p>
+                            <p class="longitude"></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section>
+            <div id="map" class="map"></div>
+        </section>
     </main>
-    
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="javascript/script.js"></script>
 </body>
