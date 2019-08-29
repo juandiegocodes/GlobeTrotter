@@ -45,14 +45,24 @@ travelApp.userClick = function() {
         // const population = travelApp.country.population
         const population= travelApp.numberWithCommas(travelApp.country.population);
         $('.population').html(`${population}`);
+        
+        const latitude = travelApp.country.latlng[0];
+        $('.latitude').html(`${latitude}`)
+
+        const longitude = travelApp.country.latlng[1];
+        $('longitude').html(`${longitude}`)
 
         travelApp.languagesArray = []
         travelApp.multipleLanguages();
         console.log(travelApp.languagesArray)
         $('.languages').html(travelApp.languagesArray.join(', '));
-        travelApp.otherInfo = [];
+        
     })
 }
+
+//grab the name of the selected country
+//make an api call to unsplash
+//pass the name as a parameter to api
 
 travelApp.multipleLanguages = function() {
     for(let i = 0; i<(travelApp.country.languages).length; i++) {

@@ -6,7 +6,10 @@ color-reference.png
 Resources
 https://codepen.io/orrybaram/pen/NqvVeX
 
-
+-----------
+Unsplash api
+Access key: 01c35b864d4d1dc42f9d32d9e4943e98e2863007b49a9aae70bbc8b785735efb
+Secret key: cb3687f28fc5bdf5c3489730991d7e9470c1fec49c8dbbeb08c6de98cac6f351
 -----------
 Timeline:
 27: html wireframe, make the api call, and push elements to dom
@@ -33,6 +36,6 @@ MVP Pseudocode:
 - display this to dom
 
 Stretch goals:
-Unsplashit api - look for pictures of the country's attractions, display that in gallery area (max 6 photos)
+Unsplash api - look for pictures of the country's attractions, display that in gallery area (max 6 photos)
 Weather api - look up weather of capital city of that country
 ---------
