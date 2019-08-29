@@ -7,9 +7,10 @@ Resources
 https://codepen.io/orrybaram/pen/NqvVeX
 
 -----------
-Unsplash api
-Access key: 01c35b864d4d1dc42f9d32d9e4943e98e2863007b49a9aae70bbc8b785735efb
-Secret key: cb3687f28fc5bdf5c3489730991d7e9470c1fec49c8dbbeb08c6de98cac6f351
+Pixelbay
+key:13460553-36edb17dd643bfc7f36cf9eab
+docS: https://pixabay.com/api/docs/
+
 -----------
 Timeline:
 27: html wireframe, make the api call, and push elements to dom
