@@ -112,7 +112,7 @@ travelApp.userClick = function() {
             ],
             view: new ol.View({
                 center: ol.proj.fromLonLat([travelApp.coordinates[0],travelApp.coordinates[1]]),
-                zoom: 3,
+                zoom: 5
             }),
           });
 
