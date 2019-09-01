@@ -21,6 +21,11 @@ Timeline:
     randomize function and attach it to the button click - testing
 28: color palette, more css, JS: filtering errors
 29: MVP deadline
+To do:
+- if api fails, have placeholder text
+- mobile
+- optimize code (some loops can be re-written)
+- smooth scroll, more animation
 -----------
 Scope Outline
 
