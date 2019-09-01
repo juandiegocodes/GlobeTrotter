@@ -43,10 +43,10 @@ travelApp.getWeather = function() {
             $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2011546/natureselfie.gif")
         }
         else if (travelApp.capitalWeather > 10) {
-            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2010355/facebook---dribbble---catch-snow.gif")
+            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2007686/adventure-camera-adjust.gif")
         }
         else if (travelApp.capitalWeather > 0) {
-            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2007686/adventure-camera-adjust.gif")
+            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2010355/facebook---dribbble---catch-snow.gif")
         }
         
         else{
