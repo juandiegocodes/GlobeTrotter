@@ -26,10 +26,6 @@ To do:
 - mobile
 - optimize code (some loops can be re-written)
 - smooth scroll, more animation
-
-photo problems:
-- check for duplicate ids
-- countries with more than 1 word (United Kingdom of Great Britain and Northern Ireland) will not render any photos - do we want to rename specific ones?
 -----------
 Scope Outline
 
