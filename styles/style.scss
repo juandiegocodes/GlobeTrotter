@@ -1,6 +1,7 @@
 @import 'setup';
 @import 'global';
 @import 'header';
+@import 'onescroll';
 
 // main content area
 
@@ -62,6 +63,32 @@
     display: none;
 }
 .map {
-    height: 400px;
+    height: 100vh;
     width: 100%;
+}
+
+.weather {
+    background-color: $orange;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+            font-size: 4rem;
+        }
+        figure {
+            border: 25px solid black;
+            margin-top: 5%;
+        }
+    }
+}
+
+.section {
+    height: 100vh;
+    display: none;
+}
+
+.onepage-pagination {
+    display: none;
 }

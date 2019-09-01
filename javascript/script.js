@@ -1,5 +1,7 @@
 const travelApp = {};
 travelApp.baseUrl = `https://restcountries.eu/rest/v2/all`;
+travelApp.weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
+travelApp.weatherKey= '69114812885d0951c849bf7d699853e9'
 travelApp.filteredArray = [];
 travelApp.languagesArray = [];
 travelApp.coordinates = [];
@@ -18,18 +20,35 @@ travelApp.getCountries = function() {
       }) 
 }
 
-// travelApp.getWeather = function() {
-//     $.ajax({
-//         url: travelApp.baseUrl,
-//         method: 'GET',
-//         datatype: 'json',
-//     }).then(function(result) {
-//         travelApp.filter(result);
+travelApp.getWeather = function() {
+    $.ajax({
+        url: travelApp.weatherUrl,       
+        method: 'GET',
+        datatype: 'json',
+        data: {
+            APPID: travelApp.weatherKey,
+            units: 'metric',
+            q: travelApp.country.capital,
+        }
+    }).then(function(result) {
+        console.log(result);
+        travelApp.capitalWeather = result.main.temp
+        $('.displayWeatherHeader').html(`The weather in ${travelApp.countryName} : `)
+        $('.displayWeather').html(`${travelApp.capitalWeather} °C `)
+        if (travelApp.capitalWeather > 25) {
+            $('.displayImage').attr("src","https://cdn.dribbble.com/users/1162077/screenshots/4681897/travel-hero-animation.gif")
+        }
+        else if (travelApp.capitalWeather > 10) {
+            $('.displayImage').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2007686/adventure-camera-adjust.gif")
+        }
+        else if (travelApp.capitalWeather < 10) {
+            $('.displayImage').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2010355/facebook---dribbble---catch-snow.gif")
+        }
 
-//     }).catch(error => {
-//         console.log(error)
-//       }) 
-// }
+    }).catch(error => {
+        console.log(error)
+      }) 
+}
 
 // travelApp.getPhotos = function() {
 //     $.ajax({
@@ -49,7 +68,7 @@ travelApp.getCountries = function() {
 //add the data to filteredArray
 travelApp.filter = function(rawData) {
     for(let i = 0; i <= 249; i++) {
-        if (rawData[i].population > 15000000 && rawData[i].flag != "") {
+        if (rawData[i].population > 5000000 && rawData[i].flag != "") {
             travelApp.filteredArray.push(rawData[i])
         }
     } 
@@ -64,6 +83,9 @@ travelApp.randomIndex = function () {
 // each time the user click, store the selected country travelApp.country
 travelApp.userClick = function() {
     $('.button').on('click', function() {
+        $('header').css('display','none');
+        $('section').css('display','flex');
+        $('.onepage-pagination').css('display','block')
         travelApp.country = travelApp.filteredArray[travelApp.randomIndex()];
         console.log(travelApp.country);
         
@@ -83,9 +105,12 @@ travelApp.userClick = function() {
 
         const population= travelApp.numberWithCommas(travelApp.country.population);
         $('.population').html(`${population}`);
+        $('.map').html();
+        // getting weather after the random capital has been collected
+        travelApp.getWeather();
         
         //each time the user click, clear the map area on the dom, and reset the coordinates array
-        $('.map').html('');
+
         travelApp.coordinates = [];
 
         //then add in the new values to the coordinates array
@@ -112,7 +137,7 @@ travelApp.userClick = function() {
             ],
             view: new ol.View({
                 center: ol.proj.fromLonLat([travelApp.coordinates[0],travelApp.coordinates[1]]),
-                zoom: 5
+                zoom: 4.5
             }),
           });
 
@@ -120,8 +145,6 @@ travelApp.userClick = function() {
         travelApp.languagesArray = []
         travelApp.multipleLanguages();
         $('.languages').html(travelApp.languagesArray.join(', '));
-
-
         
     })
 }
@@ -142,8 +165,8 @@ travelApp.numberWithCommas = function(x) {
 travelApp.nameFormatting = function (rawName) {
     let rawNameArray = rawName.split(",");
     let rawNameArray2 = rawNameArray[0].split("(");
-    let countryName = rawNameArray2[0];
-    $('.country-name').html(`${countryName}!`);
+    travelApp.countryName = rawNameArray2[0];
+    $('.country-name').html(`${travelApp.countryName}!`);
 }
 
 //grab the name of the selected country
@@ -153,10 +176,16 @@ travelApp.nameFormatting = function (rawName) {
 //capital, flag, name, languages object, currency
 travelApp.init = function () {
     travelApp.getCountries();
+
     travelApp.userClick();
 }
 
 $(document).ready(function () {
+    $(".main").onepage_scroll({
+        sectionContainer: "section",
+        responsiveFallback: 600,
+        loop: true
+      });
     travelApp.init();
 })
 
