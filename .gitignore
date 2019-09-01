@@ -12,6 +12,10 @@ key:13460553-36edb17dd643bfc7f36cf9eab
 docS: https://pixabay.com/api/docs/
 
 -----------
+WeatherApp
+key: 69114812885d0951c849bf7d699853e9
+
+-----------
 Timeline:
 27: html wireframe, make the api call, and push elements to dom
     randomize function and attach it to the button click - testing
