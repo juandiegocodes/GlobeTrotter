@@ -32,7 +32,6 @@ travelApp.getWeather = function() {
             q: travelApp.country.capital,
         }
     }).then(function(result) {
-        console.log(result);
         travelApp.capitalWeather = result.main.temp
         $('.display-weather-header').html(`The weather in ${travelApp.country.capital} : `)
         $('.display-weather').html(`${travelApp.capitalWeather} °C `)
@@ -52,6 +51,7 @@ travelApp.getWeather = function() {
         else{
             $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2356645/open-uri20151117-3-1ln2uog")
         }
+
 
     }).catch(function() {
         alert('An error has occured. Please try again later.')
@@ -85,7 +85,6 @@ travelApp.userClick = function() {
         $('.footer-link').css('display','flex');
 
         travelApp.country = travelApp.filteredArray[travelApp.randomIndex()];
-        console.log(travelApp.country);
         
         //render the information on the DOM
         travelApp.clickRendering();
@@ -201,7 +200,6 @@ travelApp.getPhotos = function () {
         }
     }).then(function (result) {
         travelApp.photoFilter(result);
-        console.log(result);
     }).catch(function() {
         alert('An error has occured. Please try again later.');
     })
