@@ -4,6 +4,10 @@
 
 // main content area
 
+html {
+    scroll-behavior: smooth;
+}
+
 .flag-area {
     background-color: $yellow;
     position: relative;
@@ -121,6 +125,7 @@ h2 {
 }
 
 .gallery-image {
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     img {
         width: 100%;
     }
@@ -143,6 +148,13 @@ footer{
     background-color: white;
 }
 
-html {
-    scroll-behavior: smooth;
+@keyframes slide-top {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
+
+

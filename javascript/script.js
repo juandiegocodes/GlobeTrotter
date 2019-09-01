@@ -34,23 +34,23 @@ travelApp.getWeather = function() {
     }).then(function(result) {
         console.log(result);
         travelApp.capitalWeather = result.main.temp
-        $('.displayWeatherHeader').html(`The weather in ${travelApp.country.capital} : `)
-        $('.displayWeather').html(`${travelApp.capitalWeather} °C `)
+        $('.display-weather-header').html(`The weather in ${travelApp.country.capital} : `)
+        $('.display-weather').html(`${travelApp.capitalWeather} °C `)
         if (travelApp.capitalWeather > 30) {
-            $('.displayImage').attr("src","https://cdn.dribbble.com/users/1162077/screenshots/4681897/travel-hero-animation.gif")
+            $('.display-image').attr("src","https://cdn.dribbble.com/users/1162077/screenshots/4681897/travel-hero-animation.gif")
         }
         else if (travelApp.capitalWeather > 22) {
-            $('.displayImage').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2011546/natureselfie.gif")
+            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2011546/natureselfie.gif")
         }
         else if (travelApp.capitalWeather > 10) {
-            $('.displayImage').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2007686/adventure-camera-adjust.gif")
+            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2010355/facebook---dribbble---catch-snow.gif")
         }
         else if (travelApp.capitalWeather > 0) {
-            $('.displayImage').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2007686/adventure-camera-adjust.gif")
+            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2007686/adventure-camera-adjust.gif")
         }
         
         else{
-            $('.displayImage').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2356645/open-uri20151117-3-1ln2uog")
+            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2356645/open-uri20151117-3-1ln2uog")
         }
 
     }).catch(function() {
@@ -82,7 +82,7 @@ travelApp.userClick = function() {
     
     $('.button-link').on('click', function() {
         $('section').css('display','flex');
-        $('.footerLink').css('display','flex');
+        $('.footer-link').css('display','flex');
 
         travelApp.country = travelApp.filteredArray[travelApp.randomIndex()];
         console.log(travelApp.country);
@@ -274,7 +274,7 @@ travelApp.photoRendering = function () {
 
     //go through the array and add the images and alt texts
     if (photosArray.length == 0) {
-        $('.gallerySection').hide();
+        $('.gallery-section').hide();
     } else {
         if (photosArray.length <3) {
             $('.gallery').css('column-count', photosArray.length)
