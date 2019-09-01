@@ -8,6 +8,7 @@ travelApp.coordinates = [];
 
 //Countries API
 travelApp.getCountries = function() {
+    console.log('get countries api')
     $.ajax({
         url: travelApp.baseUrl,
         method: 'GET',
@@ -50,25 +51,13 @@ travelApp.getWeather = function() {
       }) 
 }
 
-// travelApp.getPhotos = function() {
-//     $.ajax({
-//         url: travelApp.baseUrl,
-//         method: 'GET',
-//         datatype: 'json',
-//     }).then(function(result) {
-//         travelApp.filter(result);
-
-//     }).catch(error => {
-//         console.log(error)
-//       }) 
-// }
-
 
 //filter the raw data based on population, and if the returned data has a flag image
 //add the data to filteredArray
 travelApp.filter = function(rawData) {
-    for(let i = 0; i <= 249; i++) {
-        if (rawData[i].population > 5000000 && rawData[i].flag != "") {
+    console.log('country filter')
+    for (let i = 0; i < rawData.length; i++) {
+        if (rawData[i].population > 15000000 && rawData[i].flag != "") {
             travelApp.filteredArray.push(rawData[i])
         }
     } 
@@ -76,12 +65,14 @@ travelApp.filter = function(rawData) {
 
 //generate a random number between 0 to the length of the array
 travelApp.randomIndex = function () {
+    console.log('randomize country index function')
     return (Math.floor(Math.random() * travelApp.filteredArray.length));
 }
 
 // name, capital, flag, languages, currencies,Demonim,region, lating(strechgoal), timezone(optional)
 // each time the user click, store the selected country travelApp.country
 travelApp.userClick = function() {
+    
     $('.button').on('click', function() {
         $('header').css('display','none');
         $('section').css('display','flex');
@@ -89,10 +80,13 @@ travelApp.userClick = function() {
         travelApp.country = travelApp.filteredArray[travelApp.randomIndex()];
         console.log(travelApp.country);
         
+        travelApp.country = travelApp.filteredArray[travelApp.randomIndex()];
+        // console.log(travelApp.country)
         //dom rendering
         const name = travelApp.country.name
         travelApp.nameFormatting(name);
         // $('.country-name').html(`${name}!`);
+        // console.log(travelApp.countryName);
 
         const flag = travelApp.country.flag
         $('.flag').attr('src', flag).attr('alt', `${name}'s flag`);
@@ -145,12 +139,15 @@ travelApp.userClick = function() {
         travelApp.languagesArray = []
         travelApp.multipleLanguages();
         $('.languages').html(travelApp.languagesArray.join(', '));
+
+        travelApp.getPhotos();
         
     })
 }
 
 //extracting the lanuguages from each country object
 travelApp.multipleLanguages = function() {
+    console.log('multiple languages function')
     for(let i = 0; i<(travelApp.country.languages).length; i++) {
         travelApp.languagesArray.push(travelApp.country.languages[i].name);
     }
@@ -158,26 +155,102 @@ travelApp.multipleLanguages = function() {
 
 //comma separate the population value
 travelApp.numberWithCommas = function(x) {
+    console.log('number with commas function')
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-//country name formatting
+//country name formatting, remove commas and brackets in the country name
 travelApp.nameFormatting = function (rawName) {
+    console.log('name formatting function')
     let rawNameArray = rawName.split(",");
     let rawNameArray2 = rawNameArray[0].split("(");
     travelApp.countryName = rawNameArray2[0];
     $('.country-name').html(`${travelApp.countryName}!`);
 }
 
-//grab the name of the selected country
-//make an api call to unsplash
-//pass the name as a parameter to api
+// photos API
+travelApp.photoUrl = 'https://pixabay.com/api';
+travelApp.photoKey = '13460553-36edb17dd643bfc7f36cf9eab';
+travelApp.getPhotos = function () {
+    console.log('get photos api')
+    $.ajax({
+        url: travelApp.photoUrl,
+        method: 'GET',
+        datatype: 'jsonp',
+        data: {
+            key: travelApp.photoKey,
+            image_type: 'photo',
+            q: travelApp.countryName,
+            q: travelApp.country.capital
+        }
+    }).then(function (result) {
+        travelApp.photoFilter(result);
+        console.log(result);
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
+//once results come back, run it through a filter
+travelApp.photoFilter = function (rawPhotoObject) {
+
+    //resetting values and DOM
+    travelApp.matchingPhotosArray = [];
+    $('.gallery').html('');
+
+    //only want the "hits" array from the data we got back, rawPhotoArray is an array of objects
+    const rawPhotoArray = rawPhotoObject.hits
+    let photoTags = "";
+
+    //go through each object in the array
+    for (let i = 0; i < rawPhotoArray.length; i++) {
+
+        //grab the tag property - it's a string with comma separated values
+        photoTags = rawPhotoArray[i].tags
+
+        //split this string into an array of words 
+        travelApp.photoTagsArray = photoTags.split(", ");
+
+        //filter the array of tags for country name and demonym
+        travelApp.photoTagsFilter(rawPhotoArray[i]);
+    }
+
+    travelApp.photoRendering();
+}
+
+
+//only want photos with tags that match the country name and demonym
+travelApp.photoTagsFilter = function (rawPhoto) {
+
+    //go through each photo tag in the photo tags array
+    for (let i = 0; i < travelApp.photoTagsArray.length; i++) {
+
+        if (travelApp.photoTagsArray[i].toLowerCase() == travelApp.countryName.toLowerCase() || travelApp.photoTagsArray[i].toLowerCase() == travelApp.country.demonym.toLowerCase() || travelApp.photoTagsArray[i].toLowerCase() == travelApp.country.capital.toLowerCase()) {
+
+            //add the object into matching photos array
+            travelApp.matchingPhotosArray.push(rawPhoto)
+        }
+    }
+}
+
+//rendering matching photos on the DOM
+travelApp.photoRendering = function () {
+    console.log('photo rendering function')
+    for (let i = 0; i < travelApp.matchingPhotosArray.length; i++) {
+        jpg = travelApp.matchingPhotosArray[i].webformatURL
+        $('.gallery').append(`
+            <img src="${jpg}" alt="">
+        `)
+    }
+}
 
 //capital, flag, name, languages object, currency
 travelApp.init = function () {
+    console.log('init function')
     travelApp.getCountries();
 
     travelApp.userClick();
+
 }
 
 $(document).ready(function () {
