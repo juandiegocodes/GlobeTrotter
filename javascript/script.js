@@ -8,7 +8,7 @@ travelApp.coordinates = [];
 
 //Countries API
 travelApp.getCountries = function() {
-    console.log('get countries api')
+
     $.ajax({
         url: travelApp.baseUrl,
         method: 'GET',
@@ -55,7 +55,7 @@ travelApp.getWeather = function() {
 //filter the raw data based on population, and if the returned data has a flag image
 //add the data to filteredArray
 travelApp.filter = function(rawData) {
-    console.log('country filter')
+
     for (let i = 0; i < rawData.length; i++) {
         if (rawData[i].population > 15000000 && rawData[i].flag != "") {
             travelApp.filteredArray.push(rawData[i])
@@ -65,7 +65,7 @@ travelApp.filter = function(rawData) {
 
 //generate a random number between 0 to the length of the array
 travelApp.randomIndex = function () {
-    console.log('randomize country index function')
+
     return (Math.floor(Math.random() * travelApp.filteredArray.length));
 }
 
@@ -147,7 +147,7 @@ travelApp.userClick = function() {
 
 //extracting the lanuguages from each country object
 travelApp.multipleLanguages = function() {
-    console.log('multiple languages function')
+
     for(let i = 0; i<(travelApp.country.languages).length; i++) {
         travelApp.languagesArray.push(travelApp.country.languages[i].name);
     }
@@ -155,13 +155,13 @@ travelApp.multipleLanguages = function() {
 
 //comma separate the population value
 travelApp.numberWithCommas = function(x) {
-    console.log('number with commas function')
+
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 //country name formatting, remove commas and brackets in the country name
 travelApp.nameFormatting = function (rawName) {
-    console.log('name formatting function')
+
     let rawNameArray = rawName.split(",");
     let rawNameArray2 = rawNameArray[0].split("(");
     travelApp.countryName = rawNameArray2[0];
@@ -172,7 +172,7 @@ travelApp.nameFormatting = function (rawName) {
 travelApp.photoUrl = 'https://pixabay.com/api';
 travelApp.photoKey = '13460553-36edb17dd643bfc7f36cf9eab';
 travelApp.getPhotos = function () {
-    console.log('get photos api')
+
     $.ajax({
         url: travelApp.photoUrl,
         method: 'GET',
@@ -219,7 +219,7 @@ travelApp.photoFilter = function (rawPhotoObject) {
 }
 
 
-//only want photos with tags that match the country name and demonym
+//only want photos with tags that match the country name, demonym, and capital city
 travelApp.photoTagsFilter = function (rawPhoto) {
 
     //go through each photo tag in the photo tags array
@@ -233,20 +233,43 @@ travelApp.photoTagsFilter = function (rawPhoto) {
     }
 }
 
-//rendering matching photos on the DOM
+
+//rendering matching photos on the DOM with tags as alt text
 travelApp.photoRendering = function () {
-    console.log('photo rendering function')
+
+    //use the set object to eliminate duplicates
+    const photoSet = new Set();
+    const photoAlt = [];
+
+    //go through each object that matches, grab the jpg and tags
     for (let i = 0; i < travelApp.matchingPhotosArray.length; i++) {
-        jpg = travelApp.matchingPhotosArray[i].webformatURL
+        jpg = travelApp.matchingPhotosArray[i].webformatURL;
+        tags = travelApp.matchingPhotosArray[i].tags;
+        
+        //if the image is not in the set, add it to the set, and push the tags in the photoAlt array
+        if (photoSet.has(jpg) == false) {
+            photoSet.add(jpg);
+            photoAlt.push(tags);
+        }
+    }
+
+    //turn the set back into an array
+    const photosArray = Array.from(photoSet)
+
+    //go through the array and add the images and alt texts
+    for (let i = 0; i < photosArray.length; i++) {
         $('.gallery').append(`
-            <img src="${jpg}" alt="">
+        <img src="${photosArray[i]}" alt="${photoAlt[i]}">
         `)
     }
+
+    console.log(jpg);
+    console.log(travelApp.matchingPhotosArray)
 }
 
 //capital, flag, name, languages object, currency
 travelApp.init = function () {
-    console.log('init function')
+
     travelApp.getCountries();
 
     travelApp.userClick();
@@ -259,6 +282,7 @@ $(document).ready(function () {
         responsiveFallback: 600,
         loop: true
       });
+
     travelApp.init();
 })
 
