@@ -9,23 +9,17 @@ https://codepen.io/orrybaram/pen/NqvVeX
 -----------
 Pixelbay
 key:13460553-36edb17dd643bfc7f36cf9eab
-docS: https://pixabay.com/api/docs/
 
 -----------
 WeatherApp
 key: 69114812885d0951c849bf7d699853e9
 
 -----------
-Timeline:
-27: html wireframe, make the api call, and push elements to dom
-    randomize function and attach it to the button click - testing
-28: color palette, more css, JS: filtering errors
-29: MVP deadline
+
 To do:
-- if api fails, have placeholder text
-- mobile
 - optimize code (some loops can be re-written)
-- smooth scroll, more animation
+- rename css classes
+- more animation
 -----------
 Scope Outline
 

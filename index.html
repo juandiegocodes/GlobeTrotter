@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shan Diego</title>
+    <title>Shan Diego - Globe Trotter App</title>
+    <link rel="shortcut icon" href="globe.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Livvic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <h1>Globe Trotter</h1>
         <div class="header-graphics">
             <div class="earth">
@@ -20,73 +21,82 @@
             <div class="stars"></div>
         </div>
         <div class="button">
-            <p>My next Destination will be...</p>
+            <a href="#flag-area-id" class="button-link"><p>My next Destination will be...</p></a>
         </div>
     </header>
-    <div class="main">
-        <main>
-            <section class="flag-area page1">
-                <div class="wrapper">
-                    <!-- <h2>Your are traveling to: </h2> -->
-                    <h2 class="country-name">Click on the button above to find your destination</h2>
+    <main>
+        <section class="flag-area page1" id="flag-area-id">
+            <div class="wrapper">
+                <!-- <h2>Your are traveling to: </h2> -->
+                <h2 class="country-name">Click on the button above to find your destination</h2>
+                <figure>
+                    <img class="flag" src="" alt="">
+                </figure>
+            </div>
+        </section>
+        <section class="useful-info page2">
+            <div class="wrapper">
+                <h2>About this Country:</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="row-content">
+                            <h3>Capital</h3>
+                            <p class="capital-name"></p>
+                        </div>
+                        <div class="row-content">
+                            <h3>Population</h3>
+                            <p class="population"></p>
+                        </div>
+                        <div class="row-content">
+                            <h3>Demonym</h3>
+                            <p class="demonym"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row-content">
+                            <h3>Continent</h3>
+                            <p class="sub-region"></p>
+                        </div>
+                        <div class="row-content">
+                            <h3>Languages</h3>
+                            <p class="languages"></p>
+                        </div>
+                        <div class="row-content">
+                            <h3>Currency</h3>
+                            <p class="currency"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page3">
+            <div id="map" class="map"></div>
+        </section>
+        <section class="weather">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="weatherInfo">
+                        <h2 class="displayWeatherHeader">The weather in right now:</h2>
+                        <p class="displayWeather">34 Deg</p>
+                    </div>
                     <figure>
-                        <img class="flag" src="" alt="">
+                        <img src="" alt="" class="displayImage">
                     </figure>
                 </div>
-            </section>
-            <section class="useful-info page2">
-                <div class="wrapper">
-                    <h2>About this Country:</h2>
-                    <div class="container">
-                        <div class="row">
-                            <div class="row-content">
-                                <h3>Capital Name</h3>
-                                <p class="capital-name"></p>
-                            </div>
-                            <div class="row-content">
-                                <h3>Population</h3>
-                                <p class="population"></p>
-                                <p class="latitude"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="row-content">
-                                <h3>Sub-Region</h3>
-                                <p class="sub-region"></p>
-                            </div>
-                            <div class="row-content">
-                                <h3> Languages</h3>
-                                <p class="languages"></p>
-                                <p class="longitude"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="page3">
-                <div id="map" class="map"></div>
-            </section>
-            <section class="weather">
-                <div class="wrapper">
-                    <div class="container">
-                        <div class="weatherInfo">
-                            <h2 class="displayWeatherHeader">The weather in right now:</h2>
-                            <p class="displayWeather">34 Deg</p>
-                        </div>
-                        <figure>
-                            <img src="" alt="" class="displayImage">
-                        </figure>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="gallery"></div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
+        <section class="gallerySection">
+            <div class="gallery">
+        </section>
+        <footer class="footerLink" >    
+            <div class="button">
+                <a href="#header" class="button-footer"><p>Try Again?</p></a>
+            </div>
+        </footer>
+        <div class="copyright">Copyright © Shan Diego 2019</div>
+    </main>
     <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="jquery.onepage-scroll.js"></script>
     <script src="javascript/script.js"></script>
 </body>
 </html>
