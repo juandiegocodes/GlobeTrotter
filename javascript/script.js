@@ -1,7 +1,7 @@
 const travelApp = {};
 travelApp.baseUrl = `https://restcountries.eu/rest/v2/all`;
 travelApp.weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
-travelApp.weatherKey= '69114812885d0951c849bf7d699853e9'
+travelApp.weatherKey= '69114812885d0951c849bf7d699853e9';
 travelApp.filteredArray = [];
 travelApp.languagesArray = [];
 travelApp.coordinates = [];
@@ -17,10 +17,11 @@ travelApp.getCountries = function() {
         travelApp.filter(result);
 
     }).catch(function() {
-        alert('An error has occured. Please try again later.');
+        alert('The world came crashing down. Zombie apocalypse is upon us. There is no safe place on earth anymore. Book yourself a flight to Mars.');
       }) 
 }
 
+//weather API - only getting the weather information of the capital city of the selected country
 travelApp.getWeather = function() {
     $.ajax({
         url: travelApp.weatherUrl,       
@@ -32,7 +33,10 @@ travelApp.getWeather = function() {
             q: travelApp.country.capital,
         }
     }).then(function(result) {
+
         travelApp.capitalWeather = result.main.temp
+
+        //render different images depending on the temperature
         $('.display-weather-header').html(`The weather in ${travelApp.country.capital} : `)
         $('.display-weather').html(`${travelApp.capitalWeather} °C `)
         if (travelApp.capitalWeather > 30) {
@@ -47,15 +51,15 @@ travelApp.getWeather = function() {
         else if (travelApp.capitalWeather > 0) {
             $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2010355/facebook---dribbble---catch-snow.gif")
         }
-        
         else{
             $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2356645/open-uri20151117-3-1ln2uog")
         }
 
 
     }).catch(function() {
-        alert('An error has occured. Please try again later.')
-      }) 
+        //if API fails, hide the entire weather section
+        $('.weather').hide();
+    }) 
 }
 
 
@@ -65,18 +69,16 @@ travelApp.filter = function(rawData) {
 
     for (let i = 0; i < rawData.length; i++) {
         if (rawData[i].population > 10000000 && rawData[i].flag != "") {
-            travelApp.filteredArray.push(rawData[i])
+            travelApp.filteredArray.push(rawData[i]);
         }
     } 
 }
 
 //generate a random number between 0 to the length of the array
 travelApp.randomIndex = function () {
-
     return (Math.floor(Math.random() * travelApp.filteredArray.length));
 }
 
-// name, capital, flag, languages, currencies,Demonim,region, lating(strechgoal), timezone(optional)
 // each time the user click, store the selected country travelApp.country
 travelApp.userClick = function() {
     
@@ -115,14 +117,9 @@ travelApp.clickRendering = function() {
 
     const population = travelApp.numberWithCommas(travelApp.country.population);
     $('.population').html(`${population}`);
-    $('.map').html("");
-    
-    //https://pixabay.com/get/57e0d34a4f53b108f5d084609629347a133fdbe0504c704c732878d2914dcc51_640.jpg
-    //https://pixabay.com/get/5ee7d7424e4fad0bffd8992cc62b3378153adbe64e50744f722c7dd29744cc_640.jpg
-    
 
     //each time the user click, clear the map area on the dom, and reset the coordinates array
-
+    $('.map').html("");
     travelApp.coordinates = [];
 
     //then add in the new values to the coordinates array
@@ -154,14 +151,13 @@ travelApp.clickRendering = function() {
     });
 
     //clear the previous lanugages array, and run the lanuguages function that adds a ", " to the values in the array
-    travelApp.languagesArray = []
+    travelApp.languagesArray = [];
     travelApp.multipleLanguages();
     $('.languages').html(travelApp.languagesArray.join(', '));
 }
 
 //extracting the lanuguages from each country object
 travelApp.multipleLanguages = function() {
-
     for(let i = 0; i<(travelApp.country.languages).length; i++) {
         travelApp.languagesArray.push(travelApp.country.languages[i].name);
     }
@@ -169,13 +165,11 @@ travelApp.multipleLanguages = function() {
 
 //comma separate the population value
 travelApp.numberWithCommas = function(x) {
-
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 //country name formatting, remove commas and brackets in the country name
 travelApp.nameFormatting = function (rawName) {
-
     let rawNameArray = rawName.split(",");
     let rawNameArray2 = rawNameArray[0].split("(");
     travelApp.countryName = rawNameArray2[0];
@@ -201,7 +195,8 @@ travelApp.getPhotos = function () {
     }).then(function (result) {
         travelApp.photoFilter(result);
     }).catch(function() {
-        alert('An error has occured. Please try again later.');
+        //if photos API fail, hide the entire gallery section
+        $('.gallery-section').hide();
     })
 }
 
@@ -213,14 +208,14 @@ travelApp.photoFilter = function (rawPhotoObject) {
     $('.gallery').html('');
 
     //only want the "hits" array from the data we got back, rawPhotoArray is an array of objects
-    const rawPhotoArray = rawPhotoObject.hits
+    const rawPhotoArray = rawPhotoObject.hits;
     let photoTags = "";
 
     //go through each object in the array
     for (let i = 0; i < rawPhotoArray.length; i++) {
 
         //grab the tag property - it's a string with comma separated values
-        photoTags = rawPhotoArray[i].tags
+        photoTags = rawPhotoArray[i].tags;
 
         //split this string into an array of words 
         travelApp.photoTagsArray = photoTags.split(", ");
@@ -242,7 +237,7 @@ travelApp.photoTagsFilter = function (rawPhoto) {
         if (travelApp.photoTagsArray[i].toLowerCase() == travelApp.countryName.toLowerCase() || travelApp.photoTagsArray[i].toLowerCase() == travelApp.country.demonym.toLowerCase() || travelApp.photoTagsArray[i].toLowerCase() == travelApp.country.capital.toLowerCase()) {
 
             //add the object into matching photos array
-            travelApp.matchingPhotosArray.push(rawPhoto)
+            travelApp.matchingPhotosArray.push(rawPhoto);
         }
     }
 }
@@ -268,14 +263,17 @@ travelApp.photoRendering = function () {
     }
 
     //turn the set back into an array
-    const photosArray = Array.from(photoSet)
+    const photosArray = Array.from(photoSet);
 
-    //go through the array and add the images and alt texts
+    //DOM rendering: go through the array and add the images and alt texts
+
+    //if there're no photos left after all the filters, hide the entire section
     if (photosArray.length == 0) {
         $('.gallery-section').hide();
     } else {
+        // if there're less than 3 photos, format the columns according to the amount of photos. Otherwise, use the default of 3
         if (photosArray.length <3) {
-            $('.gallery').css('column-count', photosArray.length)
+            $('.gallery').css('column-count', photosArray.length);
         }
         
         for (let i = 0; i < photosArray.length; i++) {
@@ -287,13 +285,13 @@ travelApp.photoRendering = function () {
         }
     }
 }
-//capital, flag, name, languages object, currency
+
 travelApp.init = function () {
     travelApp.getCountries();
     travelApp.userClick();
 }
 
 $(document).ready(function () {
-        travelApp.init();
+    travelApp.init();
 })
 

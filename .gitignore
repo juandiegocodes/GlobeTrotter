@@ -46,3 +46,7 @@ Stretch goals:
 Unsplash api - look for pictures of the country's attractions, display that in gallery area (max 6 photos)
 Weather api - look up weather of capital city of that country
 ---------
+
+- used "set" object to eliminate duplicates
+- don't need user input, just a click of a button
+- strategically chain our events - not make all calls all at once to slow down the page
