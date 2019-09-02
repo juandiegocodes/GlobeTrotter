@@ -325,7 +325,7 @@ h1 {
           box-shadow: inset -30px 0 rgba(0, 0, 0, 0.1);
 }
 
-.moon {
+.plane {
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -337,11 +337,11 @@ h1 {
           transform: translate(-50%, -50%);
   overflow: auto;
   z-index: 10;
-  -webkit-animation: moonOrbit ease-in-out 15s infinite;
-          animation: moonOrbit ease-in-out 15s infinite;
+  -webkit-animation: planeOrbit ease-in-out 15s infinite;
+          animation: planeOrbit ease-in-out 15s infinite;
 }
 
-.moon:after {
+.plane:after {
   content: '';
   height: 15px;
   width: 15px;
@@ -402,7 +402,7 @@ h1 {
   }
 }
 
-@-webkit-keyframes moonOrbit {
+@-webkit-keyframes planeOrbit {
   0% {
     -webkit-transform: translate(-160px, 0);
             transform: translate(-160px, 0);
@@ -421,7 +421,7 @@ h1 {
   }
 }
 
-@keyframes moonOrbit {
+@keyframes planeOrbit {
   0% {
     -webkit-transform: translate(-160px, 0);
             transform: translate(-160px, 0);
@@ -483,8 +483,6 @@ html {
 
 .wrapper figure {
   width: 50%;
-  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @media (max-width: 768px) {
@@ -628,6 +626,11 @@ h2 {
   -webkit-column-gap: 10px;
           column-gap: 10px;
   padding-top: 10px;
+}
+
+.gallery-image {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .gallery-image img {

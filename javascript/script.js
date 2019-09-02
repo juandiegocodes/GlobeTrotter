@@ -40,19 +40,24 @@ travelApp.getWeather = function() {
         $('.display-weather-header').html(`The weather in ${travelApp.country.capital} : `)
         $('.display-weather').html(`${travelApp.capitalWeather} °C `)
         if (travelApp.capitalWeather > 30) {
-            $('.display-image').attr("src","https://cdn.dribbble.com/users/1162077/screenshots/4681897/travel-hero-animation.gif")
+            $('.display-image').attr("src","resources/travel-hero-animation.gif");
+            $('.display-image').attr("alt","human enjoying a hot day of summer using his laptop");
         }
         else if (travelApp.capitalWeather > 22) {
-            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2011546/natureselfie.gif")
+            $('.display-image').attr("src","resources/natureselfie.gif");
+            $('.display-image').attr("alt","human taking an outdoor selfie with his phone")
         }
         else if (travelApp.capitalWeather > 10) {
-            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2007686/adventure-camera-adjust.gif")
+            $('.display-image').attr("src","resources/adventure-camera-adjust.gif");
+            $('.display-image').attr("alt","human adjusting the position of his camera before taking a picture")
         }
         else if (travelApp.capitalWeather > 0) {
-            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2010355/facebook---dribbble---catch-snow.gif")
+            $('.display-image').attr("src","resources/catch-snow.gif")
+            $('.display-image').attr("alt","human enjoying a snow day")
         }
         else{
-            $('.display-image').attr("src","https://cdn.dribbble.com/users/43762/screenshots/2356645/open-uri20151117-3-1ln2uog")
+            $('.display-image').attr("src","resources/bear.gif")
+            $('.display-image').attr("alt","polar bear and a group of humans in a snow day")
         }
 
 
@@ -241,8 +246,6 @@ travelApp.photoTagsFilter = function (rawPhoto) {
         }
     }
 }
-
-
 //rendering matching photos on the DOM with tags as alt text
 travelApp.photoRendering = function () {
 
