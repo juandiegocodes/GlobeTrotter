@@ -467,7 +467,7 @@ h1 {
 }
 
 .audioplayerdiv figcaption {
-  font-size: 1rem;
+  font-size: 0.75rem;
   padding-left: 0.5rem;
   color: darkgrey;
   -webkit-transition: all 0.5s;
