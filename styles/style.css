@@ -229,13 +229,13 @@ h1 {
 }
 
 .button {
-  z-index: 900;
+  z-index: 30;
 }
 
 @media (max-width: 768px) {
   .button {
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -500,6 +500,7 @@ button {
           align-items: center;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  z-index: 35;
 }
 
 button:hover .playcontainer {

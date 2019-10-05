@@ -22,10 +22,10 @@ h1 {
 }
 
 .button {
-  z-index: 900;
+  z-index: 30;
   @include for-tablet {
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
   }
 }
 
