@@ -195,7 +195,7 @@ p {
 }
 
 header {
-  background: #1B2B2f;
+  background: #1b2b2f;
   height: 100vh;
   color: #ED553b;
   text-align: center;
@@ -214,7 +214,7 @@ header {
 }
 
 h1 {
-  font-family: 'Baloo Bhaina', cursive;
+  font-family: "Baloo Bhaina", cursive;
   margin: 0;
   position: relative;
   z-index: 90;
@@ -224,6 +224,7 @@ h1 {
 @media (max-width: 768px) {
   h1 {
     line-height: 90px;
+    font-size: 5rem;
   }
 }
 
@@ -231,7 +232,15 @@ h1 {
   z-index: 900;
 }
 
-.button-link, .button-footer {
+@media (max-width: 768px) {
+  .button {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.button-link,
+.button-footer {
   text-decoration: none;
   border-radius: 50px;
   -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
@@ -268,7 +277,7 @@ h1 {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  background-color: #3380B5;
+  background-color: #3380b5;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -284,7 +293,7 @@ h1 {
 .earth:before {
   content: "";
   position: absolute;
-  background: #85C567;
+  background: #85c567;
   height: 30px;
   width: 75px;
   left: 0;
@@ -293,8 +302,8 @@ h1 {
   border-radius: 40px;
   -webkit-animation: rotateElement linear 25s infinite;
           animation: rotateElement linear 25s infinite;
-  -webkit-box-shadow: 0px 75px 0 -5px #85C567, 5px 35px 0 -3px #85C567, 35px 125px 0 -9px #85C567, 120px -15px 0 -7px #85C567, 135px -55px 0 -9px #85C567, 150px 25px 0 7px #85C567, 220px 70px 0 -2px #85C567, 235px -35px 0 -3px #85C567, 280px 85px 0 3px #85C567, 320px 30px 0 1px #85C567, 400px 0 0 0 #85C567, 400px 75px 0 -5px #85C567, 405px 35px 0 -3px #85C567, 435px 125px 0 -9px #85C567, 520px -15px 0 -7px #85C567, 535px -55px 0 -9px #85C567, 550px 25px 0 7px #85C567, 620px 70px 0 -2px #85C567, 635px -35px 0 -3px #85C567, 680px 85px 0 3px #85C567, 720px 30px 0 1px #85C567;
-          box-shadow: 0px 75px 0 -5px #85C567, 5px 35px 0 -3px #85C567, 35px 125px 0 -9px #85C567, 120px -15px 0 -7px #85C567, 135px -55px 0 -9px #85C567, 150px 25px 0 7px #85C567, 220px 70px 0 -2px #85C567, 235px -35px 0 -3px #85C567, 280px 85px 0 3px #85C567, 320px 30px 0 1px #85C567, 400px 0 0 0 #85C567, 400px 75px 0 -5px #85C567, 405px 35px 0 -3px #85C567, 435px 125px 0 -9px #85C567, 520px -15px 0 -7px #85C567, 535px -55px 0 -9px #85C567, 550px 25px 0 7px #85C567, 620px 70px 0 -2px #85C567, 635px -35px 0 -3px #85C567, 680px 85px 0 3px #85C567, 720px 30px 0 1px #85C567;
+  -webkit-box-shadow: 0px 75px 0 -5px #85c567, 5px 35px 0 -3px #85c567, 35px 125px 0 -9px #85c567, 120px -15px 0 -7px #85c567, 135px -55px 0 -9px #85c567, 150px 25px 0 7px #85c567, 220px 70px 0 -2px #85c567, 235px -35px 0 -3px #85c567, 280px 85px 0 3px #85c567, 320px 30px 0 1px #85c567, 400px 0 0 0 #85c567, 400px 75px 0 -5px #85c567, 405px 35px 0 -3px #85c567, 435px 125px 0 -9px #85c567, 520px -15px 0 -7px #85c567, 535px -55px 0 -9px #85c567, 550px 25px 0 7px #85c567, 620px 70px 0 -2px #85c567, 635px -35px 0 -3px #85c567, 680px 85px 0 3px #85c567, 720px 30px 0 1px #85c567;
+          box-shadow: 0px 75px 0 -5px #85c567, 5px 35px 0 -3px #85c567, 35px 125px 0 -9px #85c567, 120px -15px 0 -7px #85c567, 135px -55px 0 -9px #85c567, 150px 25px 0 7px #85c567, 220px 70px 0 -2px #85c567, 235px -35px 0 -3px #85c567, 280px 85px 0 3px #85c567, 320px 30px 0 1px #85c567, 400px 0 0 0 #85c567, 400px 75px 0 -5px #85c567, 405px 35px 0 -3px #85c567, 435px 125px 0 -9px #85c567, 520px -15px 0 -7px #85c567, 535px -55px 0 -9px #85c567, 550px 25px 0 7px #85c567, 620px 70px 0 -2px #85c567, 635px -35px 0 -3px #85c567, 680px 85px 0 3px #85c567, 720px 30px 0 1px #85c567;
 }
 
 /* Clouds */
@@ -342,7 +351,7 @@ h1 {
 }
 
 .plane:after {
-  content: '';
+  content: "";
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -364,8 +373,8 @@ h1 {
           transform: translate(-50%, -50%);
   overflow: auto;
   z-index: 1;
-  -webkit-box-shadow: 510px -450px 0 1px white,  490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white,  -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white,  -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white,  390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white,  -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white,  -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
-          box-shadow: 510px -450px 0 1px white,  490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white,  -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white,  -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white,  390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white,  -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white,  -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
+  -webkit-box-shadow: 510px -450px 0 1px white, 490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white, -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white, -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white, 390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white, -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white, -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
+          box-shadow: 510px -450px 0 1px white, 490px -125px 0 -2px white, 150px -150px 0 -1px white, 130px 270px 0 -1px white, 480px 475px 0 -3px white, -610px 605px 0 -4px white, 570px 750px 0 -3px white, -550px 425px 0 1px white, 650px -105px 0 -2px white, 310px 60px 0 -1px white, -340px 175px 0 -3px white, -610px 1205px 0 -4px white, 500px 450px 0 -3px white, -500px 125px 0 1px white, -150px -615px 0 -2px white, -110px -370px 0 -1px white, -440px -175px 0 -3px white, -610px -205px 0 -4px white, 410px -450px 0 -3px white, 390px -125px 0 -2px white, 50px -250px 0 -1px white, 30px -170px 0 -1px white, 380px 375px 0 -5px white, -710px 705px 0 -6px white, 470px -650px 0 -3px white, -450px 425px 0 1px white, 550px -205px 0 -5px white, 210px 50px 0 -1px white, -240px 275px 0 -5px white, -510px 120px 0 -4px white, 600px 550px 0 -3px white, -400px 225px 0 1px white, -250px -515px 0 -2px white, -310px -170px 0 -4px white, -340px -275px 0 -4px white, -510px -305px 0 -5px white;
 }
 
 .inspiration {
@@ -440,6 +449,89 @@ h1 {
   }
 }
 
+.audioplayerdiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  justify-self: auto;
+  position: fixed;
+  bottom: 0;
+  right: 3px;
+  z-index: 25;
+  margin: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.audioplayerdiv figcaption {
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  color: darkgrey;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.playImg {
+  width: 15px;
+  margin-bottom: 2px;
+  margin-left: 0.5px;
+}
+
+.playcontainer {
+  background-color: #f4f4f4e1;
+  border-radius: 40px;
+  padding: 2.5px 10px;
+  border: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+button:hover .playcontainer {
+  background-color: grey;
+}
+
+button:hover figcaption {
+  color: #f4f4f4e1;
+}
+
+button:active {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+button:focus {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  border: 0.5px grey solid;
+}
+
+audio {
+  display: none;
+  border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+  audio {
+    width: 250px;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -447,7 +539,7 @@ html {
 .flag-area {
   background-color: #fec401;
   position: relative;
-  z-index: 999999999999;
+  z-index: 22;
 }
 
 .useful-info {
@@ -512,7 +604,7 @@ html {
 }
 
 h2 {
-  font-family: 'Baloo Bhaina', cursive;
+  font-family: "Baloo Bhaina", cursive;
   font-size: 3.5rem;
   margin: 0;
 }
@@ -661,6 +753,10 @@ footer {
   background-color: white;
 }
 
+.copyright {
+  display: none;
+}
+
 @-webkit-keyframes slide-top {
   0% {
     -webkit-transform: translateY(-100px);
@@ -682,3 +778,4 @@ footer {
             transform: translateY(0px);
   }
 }
+/*# sourceMappingURL=style.css.map */

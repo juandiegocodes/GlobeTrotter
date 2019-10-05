@@ -1,151 +1,154 @@
-@import 'setup';
-@import 'global';
-@import 'header';
+@import "setup";
+@import "global";
+@import "header";
+@import "audioplayer";
 
 // main content area
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .flag-area {
-    background-color: $yellow;
-    position: relative;
-    z-index: 999999999999;
+  background-color: $yellow;
+  position: relative;
+  z-index: 22;
 }
 
 .useful-info {
-    background-color: $green;
+  background-color: $green;
 }
 
 .wrapper {
-    max-width: 1200px;
-    padding: 25px 0 50px 0;
-    width: 90%;
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+  max-width: 1200px;
+  padding: 25px 0 50px 0;
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  @include for-tablet {
+    width: 100%;
+  }
+  figure {
+    width: 50%;
     @include for-tablet {
-        width:100%; 
+      width: 70%;
     }
-    figure {
-        width: 50%;
-        @include for-tablet {
-            width: 70%;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
-    .country-name {
-        font-size: 4rem;
+  }
+  .country-name {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 3rem;
+    @include for-tablet {
+      margin: 15px 0;
     }
-    h3 {
-        font-size: 3rem;
-        @include for-tablet {
-            margin: 15px 0;
-        }
-    }
+  }
 }
 
 h2 {
-    font-family: 'Baloo Bhaina', cursive;
-    font-size: 3.5rem;
-    margin: 0;
-    @include for-tablet {
-        font-size: 2.5rem;
-        width: 400px;
-        line-height: 5rem;
-    }
-    @include for-mobile {
-        width: 300px;
-    }
-
+  font-family: "Baloo Bhaina", cursive;
+  font-size: 3.5rem;
+  margin: 0;
+  @include for-tablet {
+    font-size: 2.5rem;
+    width: 400px;
+    line-height: 5rem;
+  }
+  @include for-mobile {
+    width: 300px;
+  }
 }
 
 .container {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    @include for-tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .row-content {
     display: flex;
     flex-direction: column;
-    .row {
-        display: flex;
-        justify-content: space-evenly;
-        @include for-tablet {
-            flex-direction: column;
-            align-items: center;
-        }
+    width: 33%;
+    @include for-tablet {
+      text-align: center;
+      width: 100%;
     }
-    .row-content{
-        display: flex;
-        flex-direction: column;
-        width: 33%;
-        @include for-tablet {
-            text-align: center;
-            width: 100%;
-        }
-    }
+  }
 }
 .map {
-    height: 400px;
-    width: 100%;
+  height: 400px;
+  width: 100%;
 }
 
 .weather {
-    background-color: $orange;
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        p {
-            font-size: 4rem;
-        }
-        figure {
-            border: 25px solid black;
-            margin-top: 5%;
-        }
+  background-color: $orange;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 4rem;
     }
+    figure {
+      border: 25px solid black;
+      margin-top: 5%;
+    }
+  }
 }
 
 .section {
-    height: 100vh;
-    display: none;
-
+  height: 100vh;
+  display: none;
 }
 
 .gallery {
-    column-count: 3;
-    column-gap: 10px;
-    padding-top: 10px;
+  column-count: 3;
+  column-gap: 10px;
+  padding-top: 10px;
 }
 
 .gallery-image {
-    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    img {
-        width: 100%;
-    }
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  img {
+    width: 100%;
+  }
 }
 
 section {
-    display: none;
+  display: none;
 }
 
 .footerLink {
-    display: none;
-    flex-direction: column;
+  display: none;
+  flex-direction: column;
 }
 
-footer{
-    display: none;
-    padding: 2rem;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+footer {
+  display: none;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.copyright {
+  display: none;
 }
 
 @keyframes slide-top {
@@ -156,5 +159,3 @@ footer{
     transform: translateY(0px);
   }
 }
-
-

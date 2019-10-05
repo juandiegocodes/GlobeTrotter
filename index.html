@@ -23,6 +23,20 @@
         <div class="button">
             <a href="#flag-area-id" class="button-link"><p>My next Destination will be...</p></a>
         </div>
+        <div class="audioplayerdiv">
+            <button id="playButton">
+                <figure class="playcontainer" class="playContainer">
+                    <img src="resources/play.png" alt="play button" class="playImg">
+                </figure>
+                <figcaption>LISTEN TO STORY</figcaption>
+            </button>
+            <audio
+            controls
+            src="https://s3.amazonaws.com/mobile.engineering.com/audio/19559.mp3" id="audioplay">
+                Your browser does not support the
+                <code>audio</code> element.
+            </audio>
+        </div>
     </header>
     <main>
         <section class="flag-area page1" id="flag-area-id">
@@ -98,5 +112,6 @@
     <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="javascript/script.js"></script>
+    <script src="javascript/audioplayer.js"></script>
 </body>
 </html>

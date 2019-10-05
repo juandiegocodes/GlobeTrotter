@@ -1,0 +1,61 @@
+.audioplayerdiv {
+  display: flex;
+  align-self: flex-end;
+  justify-self: auto;
+  position: fixed;
+  bottom: 0;
+  right: 3px;
+  z-index: 25;
+  margin: 1rem;
+  align-items: center;
+  figcaption {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    color: darkgrey;
+    transition: all 0.5s;
+  }
+}
+.playImg {
+  width: 15px;
+  margin-bottom: 2px;
+  margin-left: 0.5px;
+}
+.playcontainer {
+  background-color: #f4f4f4e1;
+  border-radius: 40px;
+  padding: 2.5px 10px;
+  border: none;
+  transition: all 0.5s;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+button:hover .playcontainer {
+  background-color: grey;
+}
+button:hover figcaption {
+  color: #f4f4f4e1;
+}
+
+button:active {
+  transform: scale(1.05);
+}
+
+button:focus {
+  transform: scale(1.05);
+  border: 0.5px grey solid;
+}
+
+audio {
+  display: none;
+  border-radius: 50px;
+  @include for-tablet {
+    width: 250px;
+  }
+}
